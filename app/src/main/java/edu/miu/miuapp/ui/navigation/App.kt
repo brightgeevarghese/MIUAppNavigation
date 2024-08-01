@@ -1,11 +1,13 @@
-package edu.miu.miuapp.ui
+package edu.miu.miuapp.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import edu.miu.miuapp.ui.screens.ContactScreen
+import edu.miu.miuapp.ui.screens.HomeScreen
+import edu.miu.miuapp.ui.screens.ProgramsScreen
 
 @Composable
 fun App(navHostController: NavHostController, modifier: Modifier = Modifier) {

@@ -1,4 +1,4 @@
-package edu.miu.miuapp.components
+package edu.miu.miuapp.ui.components
 
 import android.os.Bundle
 import androidx.compose.material.icons.Icons
