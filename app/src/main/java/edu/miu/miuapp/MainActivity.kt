@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import edu.miu.miuapp.ui.components.TopBar
-import edu.miu.miuapp.ui.navigation.App
+import edu.miu.miuapp.ui.navigation.NavigationGraph
 import edu.miu.miuapp.ui.theme.MIUAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,12 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController: NavHostController = rememberNavController()
             MIUAppTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    topBar = { TopBar(navController) }
-                ) { innerPadding ->
-                    App(navController, modifier = Modifier.padding(innerPadding))
-                }
+                NavigationGraph(navController = navController)
             }
         }
     }
@@ -39,13 +34,8 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun MIUAppPreview() {
+    val navController: NavHostController = rememberNavController()
     MIUAppTheme {
-        val navController: NavHostController = rememberNavController()
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            topBar = { TopBar(navController) }
-        ) { innerPadding ->
-            App(navController, modifier = Modifier.padding(innerPadding))
-        }
+        NavigationGraph(navController = navController)
     }
 }
